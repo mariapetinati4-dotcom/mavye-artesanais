@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acompanhar pedido — MAVYE ARTESANAIS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+:root{
+    --fundo:#f7f3eb;
+    --fundo-claro:#fbf9f4;
+    --preto:#171717;
+    --texto:#4d4841;
+    --dourado:#a68143;
+    --linha:rgba(166,129,67,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    min-height:100vh;
+    background:var(--fundo);
+    color:var(--preto);
+    font-family:"Montserrat",sans-serif;
+}
+a{text-decoration:none;color:inherit}
+header{
+    min-height:115px;
+    padding:25px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    border-bottom:1px solid var(--linha);
+}
+.logo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.logo img{width:32px;height:32px;object-fit:contain;margin-bottom:5px}
+.logo-nome{
+    font-family:"Cormorant Garamond",serif;
+    font-size:28px;
+    letter-spacing:7px;
+}
+.logo-sub{
+    color:var(--dourado);
+    font-size:8px;
+    letter-spacing:5px;
+    margin-top:6px;
+}
+.voltar{
+    font-size:10px;
+    letter-spacing:3px;
+    transition:.3s;
+}
+.voltar:hover{color:var(--dourado)}
+main{
+    min-height:calc(100vh - 190px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px 7%;
+}
+.card{
+    width:100%;
+    max-width:650px;
+    background:var(--fundo-claro);
+    padding:55px;
+    border:1px solid var(--linha);
+}
+.mini{
+    color:var(--dourado);
+    font-size:10px;
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+h1{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:400;
+    font-size:58px;
+    line-height:1;
+    margin-bottom:18px;
+}
+h1 em{color:var(--dourado);font-style:italic}
+.intro{
+    color:var(--texto);
+    font-size:13px;
+    line-height:1.8;
+    font-weight:300;
+    margin-bottom:35px;
+}
+.form{
+    display:flex;
+    gap:10px;
+}
+input{
+    flex:1;
+    height:55px;
+    border:1px solid var(--linha);
+    background:white;
+    padding:0 17px;
+    font-family:inherit;
+    font-size:12px;
+    outline:none;
+    text-transform:uppercase;
+}
+input:focus{border-color:var(--dourado)}
+button{
+    height:55px;
+    padding:0 25px;
+    border:0;
+    background:var(--preto);
+    color:white;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:9px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+button:hover{background:var(--dourado)}
+#resultado{margin-top:35px}
+.erro{
+    padding:20px;
+    border:1px solid var(--linha);
+    color:var(--texto);
+    font-size:12px;
+    line-height:1.7;
+}
+.pedido{
+    border-top:1px solid var(--linha);
+    padding-top:28px;
+}
+.codigo{
+    color:var(--dourado);
+    font-size:10px;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+.status{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    margin-bottom:25px;
+}
+.dados{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+.dado{
+    border-top:1px solid var(--linha);
+    padding-top:12px;
+}
+.dado small{
+    display:block;
+    color:var(--dourado);
+    font-size:8px;
+    letter-spacing:2px;
+    margin-bottom:6px;
+}
+.dado span{
+    font-size:12px;
+    color:var(--texto);
+}
+@media(max-width:600px){
+    header{justify-content:center;flex-direction:column}
+    main{padding:45px 5%}
+    .card{padding:35px 25px}
+    h1{font-size:48px}
+    .form{flex-direction:column}
+    .form input,.form button{width:100%}
+    .dados{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+        <img src="imagens/ChatGPT Image 19 de set. de 2026, 14_04_18.png" alt="MAVYE">
+        <div class="logo-nome">MAVYE</div>
+        <div class="logo-sub">ARTESANAIS</div>
+    </a>
+    <a href="index.html" class="voltar">← VOLTAR À MAVYE</a>
+</header>
+
+<main>
+    <section class="card">
+        <div class="mini">ACOMPANHAMENTO</div>
+        <h1>Seu pedido, <em>de perto.</em></h1>
+        <p class="intro">
+            Digite o código recebido após finalizar seu pedido para consultar o status da sua peça.
+        </p>
+
+        <div class="form">
+            <input id="codigo" type="text" placeholder="EX.: MAV-123456-42" autocomplete="off">
+            <button onclick="consultarPedido()">CONSULTAR</button>
+        </div>
+
+        <div id="resultado"></div>
+    </section>
+</main>
+
+<script>
+const SUPABASE_URL = "https://sblodrqroavmuhdvtxnd.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_tJpi6pnlEyvHO8PXQuf45w_ddQSlSQ6";
+const db = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+function dinheiro(valor){
+    return Number(valor || 0).toLocaleString("pt-BR", {
+        style:"currency",
+        currency:"BRL"
+    });
+}
+
+function dataBR(data){
+    if(!data) return "—";
+    return new Date(data).toLocaleDateString("pt-BR");
+}
+
+async function consultarPedido(){
+
+    const campo = document.getElementById("codigo");
+    const resultado = document.getElementById("resultado");
+
+    const codigo = campo.value.trim().toUpperCase();
+
+    if(!codigo){
+        resultado.innerHTML = `
+            <div class="erro">
+                Digite o código do seu pedido para consultar.
+            </div>
+        `;
+        return;
+    }
+
+    resultado.innerHTML = `
+        <div class="erro">Consultando seu pedido...</div>
+    `;
+
+    const { data, error } = await db.rpc(
+        "acompanhar_pedido",
+        { codigo_busca: codigo }
+    );
+
+    if(error){
+        console.error(error);
+        resultado.innerHTML = `
+            <div class="erro">
+                Não foi possível consultar o pedido agora.
+                Tente novamente em alguns instantes.
+            </div>
+        `;
+        return;
+    }
+
+    if(!data || data.length === 0){
+        resultado.innerHTML = `
+            <div class="erro">
+                Não encontramos um pedido com esse código.
+                Confira o código e tente novamente.
+            </div>
+        `;
+        return;
+    }
+
+    const pedido = data[0];
+
+    resultado.innerHTML = `
+        <div class="pedido">
+            <div class="codigo">${pedido.codigo}</div>
+            <div class="status">${pedido.status || "PEDIDO RECEBIDO"}</div>
+
+            <div class="dados">
+                <div class="dado">
+                    <small>PEÇA</small>
+                    <span>${pedido.peca || "—"}</span>
+                </div>
+
+                <div class="dado">
+                    <small>VALOR</small>
+                    <span>${dinheiro(pedido.valor)}</span>
+                </div>
+
+                <div class="dado">
+                    <small>RECEBIDO EM</small>
+                    <span>${dataBR(pedido.criado_em)}</span>
+                </div>
+
+                <div class="dado">
+                    <small>PRAZO</small>
+                    <span>${pedido.prazo ? dataBR(pedido.prazo) : "Em definição"}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+document.getElementById("codigo").addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        consultarPedido();
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MAVYE ARTESANAIS</title>
+
+    <meta
+        name="description"
+        content="MAVYE ARTESANAIS — personalizados em crochê feitos à mão, com identidade."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+
+<style>
+
+/* =====================================================
+   CONFIGURAÇÃO GERAL
+===================================================== */
+
+:root {
+
+    --fundo: #f7f3eb;
+
+    --fundo-claro: #fbf9f4;
+
+    --preto: #171717;
+
+    --texto: #4d4841;
+
+    --dourado: #a68143;
+
+    --linha: rgba(166, 129, 67, 0.20);
+
+    --branco: #ffffff;
+
+}
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--fundo);
+
+    color: var(--preto);
+
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+body.sem-scroll {
+
+    overflow: hidden;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+header {
+
+    width: 100%;
+
+    height: 115px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--linha);
+
+    background: rgba(247, 243, 235, 0.97);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 20;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    width: 130px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.logo img {
+
+    width: 32px;
+
+    height: 32px;
+
+    object-fit: contain;
+
+    margin-bottom: 5px;
+
+}
+
+
+.logo-nome {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    letter-spacing: 7px;
+
+    line-height: 1;
+
+}
+
+
+.logo-sub {
+
+    color: var(--dourado);
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+    margin-top: 6px;
+
+}
+
+
+/* MENU */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+
+}
+
+
+nav a {
+
+    position: relative;
+
+    color: #202020;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    padding: 8px 0;
+
+    transition: 0.3s;
+
+}
+
+
+nav a:hover {
+
+    color: var(--dourado);
+
+}
+
+
+nav a.ativo {
+
+    color: var(--dourado);
+
+}
+
+
+nav a.ativo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--dourado);
+
+}
+
+
+/* SACOLA */
+
+.botao-sacola {
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: var(--preto);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.botao-sacola span {
+
+    color: var(--dourado);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: calc(100vh - 115px);
+
+    padding: 70px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.75fr;
+
+    gap: 9%;
+
+    align-items: center;
+
+}
+
+
+.hero-conteudo {
+
+    max-width: 680px;
+
+}
+
+
+.mini-titulo {
+
+    color: var(--dourado);
+
+    font-size: 11px;
+
+    letter-spacing: 3.5px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 7vw, 94px);
+
+    font-weight: 400;
+
+    line-height: 0.84;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 38px;
+
+}
+
+
+.hero h1 em {
+
+    color: var(--dourado);
+
+    font-style: italic;
+
+}
+
+
+.hero-descricao {
+
+    max-width: 500px;
+
+    color: var(--texto);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* BOTÃO PRINCIPAL */
+
+.botao {
+
+    min-width: 245px;
+
+    height: 56px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    background: var(--preto);
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    transition: 0.3s;
+
+}
+
+
+.botao:hover {
+
+    background: var(--dourado);
+
+}
+
+
+.botao span {
+
+    font-size: 18px;
+
+}
+
+
+/* DETALHE */
+
+.detalhe {
+
+    max-width: 480px;
+
+    margin-top: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.detalhe-linha {
+
+    height: 1px;
+
+    background: var(--linha);
+
+    flex: 1;
+
+}
+
+
+.detalhe img {
+
+    width: 24px;
+
+    height: 24px;
+
+    object-fit: contain;
+
+}
+
+
+/* FOTO */
+
+.hero-foto {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.hero-foto img {
+
+    width: 410px;
+
+    height: 570px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #e8ddcc;
+
+}
+
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+.secao {
+
+    padding: 110px 7%;
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 1180px;
+
+    margin: auto;
+
+}
+
+
+.titulo-secao {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+
+}
+
+
+.titulo-secao small {
+
+    color: var(--dourado);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.titulo-secao h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 62px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-top: 14px;
+
+}
+
+
+.titulo-secao h2 em {
+
+    color: var(--dourado);
+
+    font-style: italic;
+
+}
+
+
+.titulo-secao p {
+
+    color: var(--texto);
+
+    font-size: 13px;
+
+    font-weight: 300;
+
+    margin-top: 18px;
+
+}
+
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+.produtos {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.produto {
+
+    background: var(--fundo-claro);
+
+}
+
+
+.produto-imagem {
+
+    width: 100%;
+
+    height: 440px;
+
+    background: #e8dfd2;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+.produto-imagem img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+
+}
+
+
+.produto:hover .produto-imagem img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* STATUS */
+
+.status {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    background: rgba(247, 243, 235, 0.95);
+
+    padding: 8px 12px;
+
+    color: var(--dourado);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* INFORMAÇÕES */
+
+.produto-info {
+
+    padding: 25px 18px;
+
+}
+
+
+.categoria {
+
+    color: var(--dourado);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.produto-info h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    font-weight: 500;
+
+    margin: 8px 0;
+
+}
+
+
+.descricao-produto {
+
+    min-height: 38px;
+
+    color: #69635b;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+.preco {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    margin: 15px 0 18px;
+
+}
+
+
+/* AÇÕES */
+
+.acoes {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.acoes .botao {
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 46px;
+
+    font-size: 8px;
+
+}
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.sobre {
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1fr;
+
+    gap: 9%;
+
+    align-items: center;
+
+}
+
+
+.sobre-foto {
+
+    height: 600px;
+
+    background: #e8dfd2;
+
+}
+
+
+.sobre-foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.sobre-texto small {
+
+    color: var(--dourado);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.sobre-texto h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 65px;
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    margin: 20px 0 28px;
+
+}
+
+
+.sobre-texto h2 em {
+
+    color: var(--dourado);
+
+}
+
+
+.sobre-texto p {
+
+    color: var(--texto);
+
+    font-size: 14px;
+
+    font-weight: 300;
+
+    line-height: 2;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =====================================================
+   CONTATO
+===================================================== */
+
+.contato {
+
+    text-align: center;
+
+    border-top: 1px solid var(--linha);
+
+}
+
+
+.contato small {
+
+    color: var(--dourado);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.contato h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 62px;
+
+    font-weight: 400;
+
+    margin: 15px 0;
+
+}
+
+
+.contato h2 em {
+
+    color: var(--dourado);
+
+}
+
+
+.contato p {
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: var(--texto);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer {
+
+    border-top: 1px solid var(--linha);
+
+    padding: 40px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #6b645b;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+footer strong {
+
+    color: var(--preto);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* =====================================================
+   SACOLA LATERAL
+===================================================== */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.4);
+
+    z-index: 40;
+
+}
+
+
+.overlay.aberto {
+
+    display: block;
+
+}
+
+
+.sacola {
+
+    position: fixed;
+
+    right: 0;
+
+    top: 0;
+
+    width: min(430px, 100%);
+
+    height: 100vh;
+
+    background: var(--fundo-claro);
+
+    z-index: 50;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transform: translateX(100%);
+
+    transition: 0.3s;
+
+}
+
+
+.sacola.aberta {
+
+    transform: translateX(0);
+
+}
+
+
+.sacola-topo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--linha);
+
+    padding-bottom: 20px;
+
+}
+
+
+.sacola-topo h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    font-weight: 400;
+
+}
+
+
+.fechar {
+
+    background: none;
+
+    border: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.itens-sacola {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px 0;
+
+}
+
+
+.item-sacola {
+
+    display: grid;
+
+    grid-template-columns: 75px 1fr auto;
+
+    gap: 12px;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--linha);
+
+    padding: 15px 0;
+
+}
+
+
+.item-sacola img {
+
+    width: 75px;
+
+    height: 85px;
+
+    object-fit: cover;
+
+    background: #e8dfd2;
+
+}
+
+
+.item-sacola h4 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+}
+
+
+.item-sacola p {
+
+    color: #6b645b;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+.remover {
+
+    border: none;
+
+    background: none;
+
+    color: var(--dourado);
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+}
+
+
+.sacola-final {
+
+    border-top: 1px solid var(--linha);
+
+    padding-top: 20px;
+
+}
+
+
+.total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.sacola-final .botao {
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+}
+
+
+.vazia {
+
+    text-align: center;
+
+    color: #6b645b;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    padding: 50px 20px;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 950px) {
+
+    header {
+
+        padding: 20px 5%;
+
+        height: auto;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+    }
+
+
+    nav {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 25px;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 70px 7%;
+
+    }
+
+
+    .hero-foto {
+
+        justify-content: flex-start;
+
+    }
+
+
+    .produtos {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .sobre {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+
+        justify-content: center;
+
+    }
+
+
+    .logo {
+
+        width: 100%;
+
+    }
+
+
+    nav {
+
+        gap: 18px;
+
+    }
+
+
+    nav a {
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .hero {
+
+        padding: 55px 7%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 56px;
+
+    }
+
+
+    .hero-foto img {
+
+        width: 100%;
+
+        height: 500px;
+
+    }
+
+
+    .secao {
+
+        padding: 75px 7%;
+
+    }
+
+
+    .titulo-secao h2 {
+
+        font-size: 52px;
+
+    }
+
+
+    .produtos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .produto-imagem {
+
+        height: 430px;
+
+    }
+
+
+    .sobre-foto {
+
+        height: 470px;
+
+    }
+
+
+    .sobre-texto h2 {
+
+        font-size: 53px;
+
+    }
+
+
+    .contato h2 {
+
+        font-size: 50px;
+
+    }
+
+
+    .acoes {
+
+        flex-direction: column;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+    }
+
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header>
+
+    <a href="#inicio" class="logo">
+
+        <img
+            src="imagens/ChatGPT Image 19 de set. de 2026, 14_04_18.png"
+            alt="MAVYE"
+        >
+
+        <div class="logo-nome">
+            MAVYE
+        </div>
+
+        <div class="logo-sub">
+            ARTESANAIS
+        </div>
+<a href="acompanhar-pedido.html" class="botao acompanhar-botao">
+    ACOMPANHAR MEU PEDIDO <span>→</span>
+</a>
+    </a>
+
+
+    <nav>
+
+        <a
+            href="#inicio"
+            class="ativo"
+        >
+            INÍCIO
+        </a>
+
+        <a href="#colecao">
+            COLEÇÃO
+        </a>
+
+        <a href="#sobre">
+            SOBRE
+        </a>
+
+        <a href="#contato">
+            CONTATO
+        </a>
+
+    </nav>
+
+
+    <button
+        class="botao-sacola"
+        onclick="abrirSacola()"
+    >
+
+        SACOLA
+
+        <span id="quantidadeSacola">
+            0
+        </span>
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     INÍCIO
+===================================================== -->
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+    <div class="hero-conteudo">
+
+        <p class="mini-titulo">
+            FEITO À MÃO • COM IDENTIDADE
+        </p>
+
+
+        <h1>
+
+            O artesanal
+
+            <br>
+
+            <em>
+                carrega identidade.
+            </em>
+
+        </h1>
+
+
+        <p
+            class="hero-descricao"
+            id="textoHero"
+        >
+            Peças em crochê feitas à mão,
+            criadas com cuidado,
+            delicadeza e personalidade.
+        </p>
+
+
+        <a
+            href="#colecao"
+            class="botao"
+        >
+
+            CONHEÇA A COLEÇÃO
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+
+        <div class="detalhe">
+
+            <i class="detalhe-linha"></i>
+
+            <img
+                src="imagens/ChatGPT Image 19 de set. de 2026, 14_04_18.png"
+                alt=""
+            >
+
+            <i class="detalhe-linha"></i>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-foto">
+
+        <img
+            src="imagens/mavi .jpeg"
+            alt="Artesã MAVYE"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COLEÇÃO
+===================================================== -->
+
+<section
+    class="secao"
+    id="colecao"
+>
+
+    <div class="container">
+
+        <div class="titulo-secao">
+
+            <small>
+                PEÇAS ARTESANAIS
+            </small>
+
+            <h2>
+                Nossa
+                <em>
+                    coleção.
+                </em>
+            </h2>
+
+            <p>
+                Peças feitas à mão,
+                com cuidado e identidade.
+            </p>
+
+        </div>
+
+
+        <div
+            class="produtos"
+            id="produtos"
+        >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
+<section
+    class="secao"
+    id="sobre"
+>
+
+    <div class="container sobre">
+
+
+        <div class="sobre-foto">
+
+            <img
+                src="imagens/mavi .jpeg"
+                alt="Criadora da MAVYE"
+            >
+
+        </div>
+
+
+        <div class="sobre-texto">
+
+            <small>
+                SOBRE A MAVYE
+            </small>
+
+
+            <h2>
+
+                Artesanal
+
+                <br>
+
+                <em>
+                    carrega identidade.
+                </em>
+
+            </h2>
+
+
+            <p id="sobreTexto1">
+
+                A MAVYE nasceu do desejo de transformar
+                fios, detalhes e criatividade em peças
+                que tenham significado.
+
+            </p>
+
+
+            <p id="sobreTexto2">
+
+                Cada criação é feita à mão,
+                respeitando o tempo do processo artesanal
+                e valorizando a personalidade de quem
+                escolhe usá-la.
+
+            </p>
+
+
+            <p id="sobreTexto3">
+
+                Mais do que uma peça,
+                a proposta é criar algo
+                que carregue identidade.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTATO
+===================================================== -->
+
+<section
+    class="secao contato"
+    id="contato"
+>
+
+    <div class="container">
+
+        <small>
+            FALE COM A MAVYE
+        </small>
+
+
+        <h2>
+
+            Vamos criar algo
+
+            <em>
+                especial?
+            </em>
+
+        </h2>
+
+
+        <p>
+
+            Para dúvidas, encomendas,
+            cores ou personalizados,
+            entre em contato pelo WhatsApp.
+
+        </p>
+
+
+        <button
+            class="botao"
+            onclick="abrirContato()"
+        >
+
+            <a
+    class="botao"
+    href="https://wa.me/5544984262057"
+    target="_blank"
+>
+    FALAR NO WHATSAPP <span>→</span>
+</a>
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
+
+<footer>
+
+    <strong>
+        MAVYE
+    </strong>
+
+
+    <span>
+        ARTESANAL CARREGA IDENTIDADE.
+    </span>
+
+
+    <span id="ano">
+    </span>
+
+</footer>
+
+
+
+<!-- =====================================================
+     FUNDO DA SACOLA
+===================================================== -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="fecharSacola()"
+>
+</div>
+
+
+
+<!-- =====================================================
+     SACOLA
+===================================================== -->
+
+<aside
+    class="sacola"
+    id="sacola"
+>
+
+
+    <div class="sacola-topo">
+
+        <h2>
+            Sua sacola
+        </h2>
+
+
+        <button
+            class="fechar"
+            onclick="fecharSacola()"
+        >
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="itens-sacola"
+        id="itensSacola"
+    >
+    </div>
+
+
+    <div class="sacola-final">
+
+
+        <div class="total">
+
+            <span>
+                TOTAL
+            </span>
+
+            <strong id="totalSacola">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <button
+            class="botao"
+            onclick="finalizarCompra()"
+        >
+
+            FINALIZAR PELO WHATSAPP
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+        <button
+            class="botao"
+            onclick="fecharSacola()"
+            style="
+                background: transparent;
+                color: #171717;
+            "
+        >
+
+            CONTINUAR COMPRANDO
+
+        </button>
+
+    </div>
+
+</aside>
+
+            
+
+            </div>
+
+
+            <div class="modal-botoes">
+
+                <button
+                    type="button"
+                    class="botao"
+                    onclick="fecharContato()"
+                    style="
+                        background:transparent;
+                        color:#171717;
+                    "
+               ></button>
+
+
+            </div>
+
+        </form>
+</div>
+
+            <button
+                class="fechar"
+                onclick="fecharContato()"
+            >
+        </button>
+
+    </div>
+    <div class="modal-botoes">
+
+        <button
+            type="button"
+            class="botao"
+            onclick="fecharContato()"
+            style="
+                background:transparent;
+                color:#171717;
+            "
+        >
+ </div>
+
+</form>
+
+            </div>
+     <div class="modal-botoes">
+
+                <button
+                    type="button"
+                    class="botao"
+                    onclick="fecharContato()"
+                    style="
+                        background:transparent;
+                        color:#171717;
+                    "
+                >
+
+ </form>
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   CONFIGURAÇÃO DA MAVYE
+   ================================================
+
+   É AQUI QUE VOCÊ VAI TROCAR SEUS DADOS.
+
+===================================================== */
+
+
+const CONFIG = {
+
+    whatsapp: "5544984262057",
+    nomeMarca: "MAVYE ARTESANAIS",
+
+    produtos: [],
+
+    textos: {
+        hero: "Peças em crochê feitas à mão, criadas com cuidado, delicadeza e personalidade.",
+        sobre1: "A MAVYE nasceu do desejo de transformar fios, detalhes e criatividade em peças que tenham significado.",
+        sobre2: "Cada criação é feita à mão, respeitando o tempo do processo artesanal e valorizando a personalidade de quem escolhe usá-la.",
+        sobre3: "Mais do que uma peça, a proposta é criar algo que carregue identidade."
+    }
+};
+
+const SUPABASE_URL = "https://sblodrqroavmuhdvtxnd.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_tJpi6pnlEyvHO8PXQuf45w_ddQSlSQ6";
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+/* =====================================================
+   SISTEMA
+===================================================== */
+
+
+let sacola =
+    JSON.parse(
+        localStorage.getItem("mavyeSacola") || "[]"
+    );
+
+
+
+function dinheiro(valor) {
+
+    return valor.toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+
+function mostrarProdutos() {
+
+
+    const area =
+        document.getElementById("produtos");
+
+
+    area.innerHTML =
+        CONFIG.produtos
+        .map(
+            (produto, indice) => {
+
+
+                return `
+
+                <article class="produto">
+
+
+                    <div class="produto-imagem">
+
+                        <img
+                            src="${produto.imagem}"
+                            alt="${produto.nome}"
+                            onerror="this.style.display='none'"
+                        >
+
+
+                        <span class="status">
+
+                            ${
+                                produto.disponivel
+                                ? "DISPONÍVEL"
+                                : "SOB ENCOMENDA"
+                            }
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="produto-info">
+
+
+                        <div class="categoria">
+
+                            ${produto.categoria}
+
+                        </div>
+
+
+                        <h3>
+
+                            ${produto.nome}
+
+                        </h3>
+
+
+                        <p class="descricao-produto">
+
+                            ${produto.descricao}
+
+                        </p>
+
+
+                        <div class="preco">
+
+                            ${dinheiro(produto.preco)}
+
+                        </div>
+
+
+                        <div class="acoes">
+
+
+                            ${
+                                produto.disponivel
+
+                                ?
+
+                                `
+                                <button
+                                    class="botao"
+                                    onclick="adicionarSacola(${indice})"
+                                >
+
+                                    COMPRAR
+
+                                    <span>
+                                        →
+                                    </span>
+
+                                </button>
+                                `
+
+                                :
+
+                                `
+                                <button
+                                    class="botao"
+                                    onclick="abrirEncomenda(${indice})"
+                                >
+
+                                    ENCOMENDAR
+
+                                    <span>
+                                        →
+                                    </span>
+
+                                </button>
+                                `
+
+                            }
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+                `;
+
+            }
+        )
+        .join("");
+
+
+
+    preencherProdutosEncomenda();
+
+}
+
+
+
+/* =====================================================
+   PRODUTOS NO FORMULÁRIO
+===================================================== */
+
+
+function preencherProdutosEncomenda() {
+
+
+    const select =
+        document.getElementById(
+            "produtoEncomenda"
+        );
+
+
+    if (!select) return;
+
+    select.innerHTML =
+        CONFIG.produtos
+        .map(
+            (produto, indice) => `
+
+                <option value="${indice}">
+
+                    ${produto.nome}
+
+                </option>
+
+            `
+        )
+        .join("");
+
+}
+
+
+
+/* =====================================================
+   SACOLA
+===================================================== */
+
+
+function salvarSacola() {
+
+    localStorage.setItem(
+        "mavyeSacola",
+        JSON.stringify(sacola)
+    );
+
+    mostrarSacola();
+
+}
+
+
+
+/* ADICIONAR */
+function adicionarSacola(indice) {
+
+    const produto = CONFIG.produtos[indice];
+
+    if (!produto.disponivel || produto.estoque <= 0) {
+        alert("Esta peça não está disponível no momento.");
+        return;
+    }
+
+    const existente = sacola.find(
+        item => item.nome === produto.nome
+    );
+
+    if (existente) {
+
+        if (existente.quantidade >= produto.estoque) {
+            alert("Não há mais unidades disponíveis dessa peça.");
+            return;
+        }
+
+        existente.quantidade++;
+
+    } else {
+
+        sacola.push({
+
+            id: produto.id,
+
+            nome: produto.nome,
+
+            preco: produto.preco,
+
+            imagem: produto.imagem,
+
+            quantidade: 1,
+
+            disponivel: true
+
+        });
+
+    }
+
+    salvarSacola();
+
+    abrirSacola();
+}
+
+
+
+/* MOSTRAR */
+
+function mostrarSacola() {
+
+
+    const area =
+        document.getElementById(
+            "itensSacola"
+        );
+
+
+    const quantidade =
+        sacola.reduce(
+            (total, item) =>
+                total + item.quantidade,
+            0
+        );
+
+
+    document.getElementById(
+        "quantidadeSacola"
+    ).textContent = quantidade;
+
+
+
+    if (sacola.length === 0) {
+
+
+        area.innerHTML = `
+
+            <div class="vazia">
+
+                Sua sacola está vazia.
+
+                <br><br>
+
+                Escolha uma peça
+                da coleção para começar.
+
+            </div>
+
+        `;
+
+    }
+
+    else {
+
+
+        area.innerHTML =
+            sacola
+            .map(
+                (item, indice) => `
+
+                <div class="item-sacola">
+
+
+                    <img
+                        src="${item.imagem}"
+                        alt="${item.nome}"
+                    >
+
+
+                    <div>
+
+                        <h4>
+                            ${item.nome}
+                        </h4>
+
+                        <p>
+
+                            ${item.quantidade}
+                            ×
+                            ${dinheiro(item.preco)}
+
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="remover"
+                        onclick="removerSacola(${indice})"
+                    >
+
+                        REMOVER
+
+                    </button>
+
+
+                </div>
+
+                `
+            )
+            .join("");
+
+    }
+
+
+
+    const total =
+        sacola.reduce(
+            (valor, item) =>
+                valor +
+                item.preco *
+                item.quantidade,
+            0
+        );
+
+
+    document.getElementById(
+        "totalSacola"
+    ).textContent =
+        dinheiro(total);
+
+}
+
+
+
+/* REMOVER */
+
+function removerSacola(indice) {
+
+    sacola.splice(
+        indice,
+        1
+    );
+
+    salvarSacola();
+
+}
+
+
+
+/* =====================================================
+   ABRIR / FECHAR SACOLA
+===================================================== */
+
+
+function abrirSacola() {
+
+    document
+        .getElementById("sacola")
+        .classList.add("aberta");
+
+
+    document
+        .getElementById("overlay")
+        .classList.add("aberto");
+
+
+    document
+        .body
+        .classList.add("sem-scroll");
+
+}
+
+
+
+function fecharSacola() {
+
+    document
+        .getElementById("sacola")
+        .classList.remove("aberta");
+
+
+    document
+        .getElementById("overlay")
+        .classList.remove("aberto");
+
+
+    document
+        .body
+        .classList.remove("sem-scroll");
+
+}
+
+
+
+/* =====================================================
+   FINALIZAR COMPRA
+===================================================== */
+
+async function finalizarCompra() {
+
+    if (sacola.length === 0) {
+
+        alert("Sua sacola está vazia.");
+
+        return;
+    }
+
+
+    const cliente = prompt("Digite seu nome completo:");
+
+    if (!cliente || !cliente.trim()) {
+
+        return;
+    }
+
+
+    const telefone = prompt("Digite seu telefone:");
+
+    if (!telefone || !telefone.trim()) {
+
+        return;
+    }
+
+
+    /*
+       CONFERE NOVAMENTE O ESTOQUE
+       ANTES DE REGISTRAR A COMPRA
+    */
+
+    const nomesProdutos = sacola.map(
+        item => item.nome
+    );
+
+
+    const { data: produtosBanco, error: erroProdutos } =
+        await supabaseClient
+            .from("produtos")
+            .select("id, nome, estoque, disponivel")
+            .in("nome", nomesProdutos);
+
+
+    if (erroProdutos) {
+
+        console.error(erroProdutos);
+
+        alert(
+            "Não foi possível verificar o estoque. Tente novamente."
+        );
+
+        return;
+    }
+
+
+    /*
+       VERIFICA CADA ITEM DA SACOLA
+    */
+
+    for (const item of sacola) {
+
+        const produtoBanco = produtosBanco.find(
+            produto =>
+                produto.nome.toLowerCase() ===
+                item.nome.toLowerCase()
+        );
+
+
+        if (!produtoBanco) {
+
+            alert(
+                `A peça "${item.nome}" não está mais disponível.`
+            );
+
+            return;
+        }
+
+
+        /*
+           SOMENTE COMPRAS DESCONTAM ESTOQUE
+        */
+
+        if (item.disponivel) {
+
+            if (
+                !produtoBanco.disponivel ||
+                Number(produtoBanco.estoque) < item.quantidade
+            ) {
+
+                alert(
+                    `A peça "${item.nome}" não possui estoque suficiente.`
+                );
+
+                await carregarProdutosDoBanco();
+
+                return;
+            }
+
+        }
+
+    }
+
+
+    /*
+       TOTAL
+    */
+
+    const total = sacola.reduce(
+
+        (valor, item) =>
+
+            valor +
+            item.preco *
+            item.quantidade,
+
+        0
+
+    );
+
+
+    /*
+       CÓDIGO DO PEDIDO
+    */
+
+    const codigo =
+
+        "MAV-" +
+        Date.now().toString().slice(-8) +
+        "-" +
+        Math.floor(Math.random() * 100);
+
+
+    /*
+       DESCRIÇÃO DAS PEÇAS
+    */
+
+    const peca = sacola
+
+        .map(
+            item =>
+                `${item.nome} (${item.quantidade}x)`
+        )
+
+        .join(", ");
+
+
+    /*
+       OBSERVAÇÕES
+    */
+
+    const observacoes = sacola
+
+        .map(
+
+            item =>
+
+                `${item.nome}: ${dinheiro(
+                    item.preco *
+                    item.quantidade
+                )}`
+
+        )
+
+        .join(" | ");
+
+
+    /*
+       DEFINE O TIPO DO PEDIDO
+    */
+
+    const possuiCompra = sacola.some(
+        item => item.disponivel
+    );
+
+
+    const possuiEncomenda = sacola.some(
+        item => !item.disponivel
+    );
+
+
+    let tipo = "SITE";
+
+
+    if (possuiCompra && !possuiEncomenda) {
+
+        tipo = "SITE-COMPRA";
+
+    }
+
+    else if (!possuiCompra && possuiEncomenda) {
+
+        tipo = "SITE-ENCOMENDA";
+
+    }
+
+    else {
+
+        tipo = "SITE-MISTO";
+
+    }
+
+
+    /*
+       REGISTRA CADA ITEM NO PEDIDO
+       
+       Para compras disponíveis:
+       SITE-COMPRA → desconta estoque.
+
+       Para encomendas:
+       SITE-ENCOMENDA → não desconta estoque.
+    */
+
+
+    const registros = sacola.map(item => ({
+
+        codigo: codigo,
+
+        cliente: cliente.trim(),
+
+        telefone: telefone.trim(),
+
+        peca: item.nome,
+
+        valor:
+            item.preco *
+            item.quantidade,
+
+        quantidade:
+            item.quantidade,
+
+        tipo:
+            item.disponivel
+                ? "SITE-COMPRA"
+                : "SITE-ENCOMENDA",
+
+        status:
+            "PEDIDO RECEBIDO",
+
+        observacoes:
+            item.disponivel
+                ? "Compra pelo site."
+                : "Peça sob encomenda."
+
+    }));
+
+
+    /*
+       ENVIA PARA O SUPABASE
+    */
+
+    const { error } = await supabaseClient
+
+        .from("pedidos")
+
+        .insert(registros);
+
+
+    if (error) {
+
+        console.error(error);
+
+        alert(
+            "Não foi possível registrar o pedido.\n\n" +
+            error.message
+        );
+
+        return;
+    }
+
+
+    /*
+       ATUALIZA OS PRODUTOS NA PÁGINA
+    */
+
+    await carregarProdutosDoBanco();
+
+
+    /*
+       MENSAGEM DO WHATSAPP
+    */
+
+    const produtos = sacola
+
+        .map(
+
+            item =>
+
+                `• ${item.nome} — ` +
+                `${item.quantidade} unidade(s) — ` +
+                `${dinheiro(
+                    item.preco *
+                    item.quantidade
+                )}`
+
+        )
+
+        .join("\n");
+
+
+    const mensagem =
+
+        `Olá! Quero finalizar um pedido na ${CONFIG.nomeMarca}.\n\n` +
+
+        `Nome: ${cliente.trim()}\n` +
+
+        `Telefone: ${telefone.trim()}\n\n` +
+
+        `${produtos}\n\n` +
+
+        `Total: ${dinheiro(total)}\n\n` +
+
+        `Código do pedido: ${codigo}`;
+
+
+    /*
+       ABRE WHATSAPP
+    */
+
+    window.open(
+
+        "https://wa.me/" +
+
+        CONFIG.whatsapp +
+
+        "?text=" +
+
+        encodeURIComponent(mensagem),
+
+        "_blank"
+
+    );
+
+
+    /*
+       LIMPA A SACOLA
+    */
+
+    sacola = [];
+
+    salvarSacola();
+
+    fecharSacola();
+
+
+    alert(
+
+        "Pedido registrado com sucesso!\n\n" +
+
+        "Código: " +
+
+        codigo
+
+    );
+
+}
+/* =====================================================
+   ENCOMENDA
+===================================================== */
+/* ENCOMENDAR */
+function abrirEncomenda(indice) {
+
+    const produto = CONFIG.produtos[indice];
+
+    const existente = sacola.find(
+        item => item.nome === produto.nome
+    );
+
+    if (existente) {
+
+        existente.quantidade++;
+
+    } else {
+
+        sacola.push({
+
+            id: produto.id,
+
+            nome: produto.nome,
+
+            preco: produto.preco,
+
+            imagem: produto.imagem,
+
+            quantidade: 1,
+
+            disponivel: false
+
+        });
+
+    }
+
+    salvarSacola();
+
+    abrirSacola();
+}
+
+
+
+/* ENVIAR ENCOMENDA */
+
+function enviarEncomenda(event) {
+
+
+    event.preventDefault();
+
+
+    const nome =
+
+        document
+        .getElementById(
+            "nomeCliente"
+        )
+        .value
+        .trim();
+
+
+    const indice =
+
+        Number(
+
+            document
+            .getElementById(
+                "produtoEncomenda"
+            )
+            .value
+
+        );
+
+
+    const produto =
+        CONFIG.produtos[indice];
+
+
+    const detalhes =
+
+        document
+        .getElementById(
+            "detalhesEncomenda"
+        )
+        .value
+        .trim();
+
+
+    const mensagem =
+
+        `Olá! Meu nome é ${nome} e gostaria de encomendar uma peça da ${CONFIG.nomeMarca}.\n\n` +
+
+        `Peça: ${produto.nome}\n` +
+
+        `Cor/detalhes: ${detalhes || "Ainda quero conversar sobre os detalhes."}\n\n` +
+
+        `Gostaria de saber o prazo e as opções disponíveis.`;
+
+
+    window.open(
+
+        "https://wa.me/" +
+        CONFIG.whatsapp +
+        "?text=" +
+        encodeURIComponent(mensagem),
+
+        "_blank"
+
+    );
+
+
+    fecharContato();
+
+}
+
+
+
+/* =====================================================
+   CARREGAR TEXTOS
+===================================================== */
+
+
+document.getElementById(
+    "textoHero"
+).textContent =
+    CONFIG.textos.hero;
+
+
+document.getElementById(
+    "sobreTexto1"
+).textContent =
+    CONFIG.textos.sobre1;
+
+
+document.getElementById(
+    "sobreTexto2"
+).textContent =
+    CONFIG.textos.sobre2;
+
+
+document.getElementById(
+    "sobreTexto3"
+).textContent =
+    CONFIG.textos.sobre3;
+
+
+
+/* ANO */
+
+document.getElementById(
+    "ano"
+).textContent =
+
+    "© " +
+    new Date().getFullYear() +
+    " " +
+    CONFIG.nomeMarca;
+
+
+
+/* INICIAR */
+
+async function carregarProdutosDoBanco() {
+
+    const { data, error } = await supabaseClient
+        .from("produtos")
+        .select("id, nome, categoria, descricao, preco, imagem, disponivel, estoque")
+        .order("id", { ascending: true });
+
+    if (error) {
+        console.error(error);
+        alert("Não foi possível carregar os produtos da MAVYE.");
+        return;
+    }
+
+    CONFIG.produtos = (data || []).map(produto => ({
+        id: produto.id,
+        nome: produto.nome,
+        categoria: produto.categoria || "CROCHÊ",
+        descricao: produto.descricao || "Bolsa artesanal feita à mão.",
+        preco: Number(produto.preco) || 0,
+        imagem: produto.imagem || "",
+        disponivel: Boolean(produto.disponivel) && Number(produto.estoque) > 0
+    }));
+
+    mostrarProdutos();
+    mostrarSacola();
+}
+
+carregarProdutosDoBanco();
+
+
+</script>
+
+
+
+</body>
+
+</html>
